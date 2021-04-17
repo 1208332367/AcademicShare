@@ -1,0 +1,298 @@
+{
+
+	"topWindow": {
+		"path": "windows/top-window.vue",
+		"style": {
+			"height": "60px"
+		},
+		"matchMedia": {
+		    "minWidth": 1028 //生效条件，当窗口宽度大于1028px时显示
+		}
+	},
+	
+	
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true,
+				"app-plus": {					
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				},
+				"h5":{
+					"titleNView":false
+				}
+			}
+		},
+		{
+			"path": "pages/upload/upload",
+			"style": {
+				"navigationBarTitleText": "资源上传",
+				"enablePullDownRefresh": false,
+				"app-plus": {				
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				},
+				"h5":{
+					"titleNView":false
+				}
+			}
+		},
+		{
+			"path": "pages/myinfo/myinfo",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false,
+				"app-plus": {				
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				},
+				"h5":{
+					"titleNView":false
+				}
+			}
+		}
+        ,{
+            "path" : "pages/resourceDetail/resourceDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "资源详情",
+				"enablePullDownRefresh": true,
+				"app-plus": {				
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				},
+				"h5":{
+					"titleNView":false
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/myinfo/modifyPassword/modifyPassword",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "密码修改",
+				"enablePullDownRefresh": false,
+				"app-plus": {				
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				},
+				"h5":{
+					"titleNView":false
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/register/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户注册",      
+                "enablePullDownRefresh": false,
+				"app-plus": {		
+                	"titleNView": {
+                		"buttons": [{
+                			"text": "\ue534",
+                			"fontSrc": "/static/uni.ttf",
+                			"fontSize": "22px",
+                			"color": "#FFFFFF"
+                		}]
+                	}
+                },
+                "h5":{
+                	"titleNView":false
+                }
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+               "navigationBarTitleText": "用户登录",
+               "enablePullDownRefresh": false,
+			   "app-plus": {				
+					"titleNView": {
+               		"buttons": [{
+               			"text": "\ue534",
+               			"fontSrc": "/static/uni.ttf",
+               			"fontSize": "22px",
+               			"color": "#FFFFFF"
+               		}]
+               	}
+               },
+               "h5":{
+               	"titleNView":false
+               }
+            }
+            
+        }
+        ,{
+            "path" : "pages/myinfo/authentication/authentication",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "身份认证",
+				"enablePullDownRefresh": false,
+                "app-plus": {		
+                	"titleNView": {
+                		"buttons": [{
+                			"text": "\ue534",
+                			"fontSrc": "/static/uni.ttf",
+                			"fontSize": "22px",
+                			"color": "#FFFFFF"
+                		}]
+                	}
+                },
+                "h5":{
+                	"titleNView":false
+                }
+            }
+            
+        }
+        ,{
+            "path" : "pages/myinfo/myFavor/myFavor",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的收藏",
+				"enablePullDownRefresh": true,
+                "app-plus": {
+                	"titleNView": {
+                		"buttons": [{
+                			"text": "\ue534",
+                			"fontSrc": "/static/uni.ttf",
+                			"fontSize": "22px",
+                			"color": "#FFFFFF"
+                		}]
+                	}
+                },
+                "h5":{
+                	"titleNView":false
+                }
+            }
+        },
+		{
+		    "path" : "pages/myinfo/myUpload/myUpload",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "我的上传",
+				"enablePullDownRefresh": true,
+		        "app-plus": {
+		        	"titleNView": {
+		        		"buttons": [{
+		        			"text": "\ue534",
+		        			"fontSrc": "/static/uni.ttf",
+		        			"fontSize": "22px",
+		        			"color": "#FFFFFF"
+		        		}]
+		        	}
+		        },
+		        "h5":{
+		        	"titleNView":false
+		        }
+		    }
+		    
+		}
+
+        ,{
+            "path" : "pages/myinfo/myDownload/myDownload",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的下载",
+				"enablePullDownRefresh": true,
+                "app-plus": {		
+                	"titleNView": {
+                		"buttons": [{
+                			"text": "\ue534",
+                			"fontSrc": "/static/uni.ttf",
+                			"fontSize": "22px",
+                			"color": "#FFFFFF"
+                		}]
+                	}
+                },
+                "h5":{
+                	"titleNView":false
+                }
+            }
+            
+        }
+    ],
+	
+	"globalStyle": {
+		"pageOrientation": "portrait",
+		"navigationBarTitleText": "ECNU学术资源共享系统",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColorTop": "#F4F5F6",
+		"backgroundColorBottom": "#F4F5F6",
+		"app-plus": {
+			"background": "#efeff4"
+		},
+		"h5": {
+			"backgroundColor": "#333333",
+			"maxWidth": 1190,	
+			"navigationBarTextStyle": "black",
+			"navigationBarBackgroundColor": "#F1F1F1"
+		}
+	},
+	
+	"tabBar": {
+		"color": "#707070",
+		"selectedColor": "#333333",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tarbar/index.png",
+				"selectedIconPath": "static/tarbar/index_select.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/upload/upload",
+				"iconPath": "static/tarbar/upload.png",
+				"selectedIconPath": "static/tarbar/upload_select.png",
+				"text": "上传"
+			},
+			{
+				"pagePath": "pages/myinfo/myinfo",
+				"iconPath": "static/tarbar/myinfo.png",
+				"selectedIconPath": "static/tarbar/myinfo_select.png",
+				"text": "我的"
+			}
+		]
+	}
+	
+}
