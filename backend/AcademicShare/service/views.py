@@ -48,6 +48,7 @@ def isLegalText(text):
 		"content":text.encode("utf-8").decode("latin1")
 	}
 	headers = {'content-type': 'application/json'}
+	# 发起POST请求
 	response =requests.post(url, data=json.dumps(data,ensure_ascii=False),headers=headers)
 	requests.post(url=url, data=data)
 	response = response.json()

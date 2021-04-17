@@ -246,7 +246,7 @@ def deleteComment(request):
 		new_comment_count = comment.objects.filter(ResourceID=resource_id,status=1).count()
 		resourceUpdate.commentCount = new_comment_count	
 
-		if(new_comment_count > 0):
+		if new_comment_count > 0:
 			new_avg_score = comment.objects.filter(ResourceID=resource_id,status=1).aggregate(avg=Avg("score")) 
 			resourceUpdate.avgScore = new_avg_score['avg']
 		else:
@@ -293,16 +293,23 @@ def getSelectedResource(request):
 		visit_ctrl = int(request.POST['visitCtrl'])
 		order_rule = int(request.POST['orderRule'])
 		profession_ids = json.loads(request.POST['ProfessionIDs'])
+
+		# 排序规则定义
 		order = '-ctime'
 		if order_rule == 1:
 			order = '-avgScore'
 		if order_rule == 2:
 			order = '-downloadCount'
+		
+		# 资源学科不限
 		if (0 in profession_ids) or len(profession_ids) == 0:
+			# 未设置搜索关键字，排序第二关键字始终是时间降序
 			if search_title == '':
 				qset = resource.objects.filter(visitCtrl__lte=visit_ctrl,status=1).order_by(order, '-ctime')
 			else:
 				qset = resource.objects.filter(visitCtrl__lte=visit_ctrl,status=1).filter(Q(title__contains=search_title) | Q(intro__contains=search_title)).order_by(order, '-ctime')
+		
+		# 资源列表包含指定的多个学科
 		else:
 			if search_title == '':
 				qset = resource.objects.filter(ProfessionID__in=profession_ids,visitCtrl__lte=visit_ctrl,status=1).order_by(order, '-ctime')
@@ -311,11 +318,17 @@ def getSelectedResource(request):
 		length = 0
 		if len(qset):
 			res['data']['resourceList'] = []
+			
+			# 按4条/页对资源进行分页
 			paginator = Paginator(qset, 4)
+
+			# 防止越界
 			if page_index < 1:
 				page_index = 1
 			if page_index > paginator.num_pages:
 				page_index = paginator.num_pages
+			
+			# 获取前端指定的页面数据
 			current_page = paginator.page(page_index)
 			DATA = json.loads(serializers.serialize("json", current_page))
 			for item in DATA:
@@ -326,6 +339,8 @@ def getSelectedResource(request):
 				res['data']['resourceList'].append(tmp)
 				length += 1
 			res['data']['length'] = length
+
+			# 因页面总数可能发生改变，前端请求的页码序号需要更新
 			res['data']['totalPages'] = paginator.num_pages
 			res['data']['pageNum'] = page_index
 		else:
@@ -360,7 +375,6 @@ def reportResource(request):
 
 		insert = report(UserID=user_id,ResourceID=resource_id)
 		insert.save()
-
 
 	except Exception as e:
 		res = {'code': 500, 'msg': 'server error', 'data': {}}
